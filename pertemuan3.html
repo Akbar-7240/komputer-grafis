@@ -90,13 +90,6 @@ textarea, input {
   background: #1e8449;
 }
 
-/* PREVIEW */
-.preview img {
-  max-width: 100%;
-  margin-top: 10px;
-  border-radius: 10px;
-}
-
 /* BACK BUTTON */
 .back-btn {
   display: inline-block;
@@ -160,17 +153,6 @@ textarea, input {
 <input>
 </div>
 
-<!-- C -->
-<div class="section">
-<h3>🖼 C. Preview Hasil Desain</h3>
-
-<input type="file" id="upload">
-
-<div class="preview" id="preview"></div>
-
-<p style="color:red;">*Hanya preview, bukan pengumpulan</p>
-</div>
-
 <!-- D -->
 <div class="section">
 <h3>📤 D. Upload ke Google Form</h3>
@@ -193,18 +175,6 @@ Upload Hasil Desain
 </div>
 
 </div>
-
-<script>
-// preview gambar
-document.getElementById("upload").addEventListener("change", function(e){
-  const file = e.target.files[0];
-  const reader = new FileReader();
-  reader.onload = function(ev){
-    document.getElementById("preview").innerHTML = "<img src='"+ev.target.result+"'>";
-  }
-  reader.readAsDataURL(file);
-});
-</script>
 
 </body>
 </html>
