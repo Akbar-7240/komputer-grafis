@@ -12,49 +12,43 @@ body {
   background: #f4f6f9;
 }
 
-/* HERO */
-.hero {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  padding: 40px;
-  background: white;
+/* TOP BAR */
+.topbar {
+  height: 8px;
+  background: #6c4ccf;
 }
 
-.hero-text {
-  max-width: 500px;
+/* HERO */
+.hero {
+  padding: 50px 40px;
 }
 
 .hero h1 {
-  font-size: 40px;
-  color: #1f3c88;
+  font-size: 42px;
+  color: #2c3e50;
   margin-bottom: 10px;
 }
 
 .hero p {
+  max-width: 600px;
   color: #555;
 }
 
-/* ICON SECTION */
+/* INFO */
 .info-box {
-  background: #eef3f8;
+  background: #e9eef5;
   margin: 20px;
   padding: 20px;
-  border-radius: 12px;
+  border-radius: 14px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-  gap: 15px;
+  gap: 20px;
 }
 
 .info-item {
   display: flex;
   align-items: center;
   gap: 10px;
-}
-
-.icon {
-  font-size: 24px;
 }
 
 /* CARDS */
@@ -67,151 +61,95 @@ body {
 
 .card {
   background: white;
-  border-radius: 16px;
-  padding: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border-radius: 18px;
+  padding: 25px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
   transition: 0.3s;
 }
 
 .card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-6px);
 }
 
 .tag {
   display: inline-block;
-  padding: 5px 10px;
+  padding: 6px 12px;
   border-radius: 20px;
   color: white;
   font-size: 12px;
   margin-bottom: 10px;
 }
 
-.blue { background: #3498db; }
-.green { background: #27ae60; }
-.purple { background: #8e44ad; }
+.blue { background:#3498db; }
+.green { background:#27ae60; }
+.purple { background:#8e44ad; }
 
-/* BUTTON */
 .btn {
   display: inline-block;
-  margin-top: 10px;
-  padding: 10px 14px;
+  margin-top: 15px;
+  padding: 10px 16px;
   border-radius: 8px;
-  text-decoration: none;
   color: white;
+  text-decoration: none;
 }
 
-.btn-blue { background: #3498db; }
-.btn-green { background: #27ae60; }
-.btn-purple { background: #8e44ad; }
-
-.btn-outline {
-  background: white;
-  border: 2px solid #ccc;
-  color: #333;
-}
-
-/* RESPONSIVE */
-@media(max-width:768px){
-  .hero {
-    flex-direction: column;
-    text-align: center;
-  }
-}
+.btn-blue { background:#3498db; }
+.btn-green { background:#27ae60; }
+.btn-purple { background:#8e44ad; }
 </style>
 </head>
 
 <body>
 
-<!-- HERO -->
+<div class="topbar"></div>
+
 <div class="hero">
-  <div class="hero-text">
-    <h1>KEGIATAN PEMBELAJARAN</h1>
-    <p>
-      Peserta didik akan melaksanakan pembelajaran berbasis Project Based Learning (PjBL)
-      yang terdiri dari 3 pertemuan hingga menghasilkan produk desain grafis.
-    </p>
-  </div>
+<h1>KEGIATAN PEMBELAJARAN</h1>
+<p>
+Pembelajaran berbasis Project Based Learning (PjBL) terdiri dari 3 pertemuan
+hingga menghasilkan produk desain grafis.
+</p>
 </div>
 
-<!-- INFO ICON -->
 <div class="info-box">
-
-  <div class="info-item">
-    <div class="icon">📘</div>
-    <div>Bacalah materi sesuai pertemuan</div>
-  </div>
-
-  <div class="info-item">
-    <div class="icon">✏️</div>
-    <div>Kerjakan LKPD setiap pertemuan</div>
-  </div>
-
-  <div class="info-item">
-    <div class="icon">👥</div>
-    <div>Diskusi bersama kelompok</div>
-  </div>
-
-  <div class="info-item">
-    <div class="icon">📤</div>
-    <div>Upload hasil kerja</div>
-  </div>
-
-  <div class="info-item">
-    <div class="icon">📊</div>
-    <div>Presentasi hasil</div>
-  </div>
-
-  <div class="info-item">
-    <div class="icon">💡</div>
-    <div>Refleksi pembelajaran</div>
-  </div>
-
+<div class="info-item">📘 Bacalah materi</div>
+<div class="info-item">✏️ Kerjakan LKPD</div>
+<div class="info-item">👥 Diskusi kelompok</div>
+<div class="info-item">📤 Upload hasil</div>
+<div class="info-item">📊 Presentasi</div>
+<div class="info-item">💡 Refleksi</div>
 </div>
 
-<!-- CARDS -->
 <div class="cards">
 
-<!-- P1 -->
 <div class="card">
-  <span class="tag blue">PERTEMUAN 1</span>
-  <h3>Pengenalan Komputer Grafis</h3>
-
-  <ul>
-    <li>Memahami komputer grafis</li>
-    <li>Bitmap & vektor</li>
-  </ul>
-
-  <a href="pertemuan1.html" class="btn btn-blue">Buka LKPD 1</a>
+<span class="tag blue">PERTEMUAN 1</span>
+<h3>Pengenalan Komputer Grafis</h3>
+<ul>
+<li>Memahami komputer grafis</li>
+<li>Bitmap & vektor</li>
+</ul>
+<a href="pertemuan1.html" class="btn btn-blue">Buka LKPD 1</a>
 </div>
 
-<!-- P2 -->
 <div class="card">
-  <span class="tag green">PERTEMUAN 2</span>
-  <h3>Format File & Software</h3>
-
-  <ul>
-    <li>Format JPG, PNG, SVG</li>
-    <li>Tools desain</li>
-  </ul>
-
-  <a href="pertemuan2.html" class="btn btn-green">Buka LKPD 2</a>
+<span class="tag green">PERTEMUAN 2</span>
+<h3>Format File & Software</h3>
+<ul>
+<li>Format JPG, PNG, SVG</li>
+<li>Tools desain</li>
+</ul>
+<a href="pertemuan2.html" class="btn btn-green">Buka LKPD 2</a>
 </div>
 
-<!-- P3 -->
 <div class="card">
-  <span class="tag purple">PERTEMUAN 3</span>
-  <h3>Praktik & Produk Desain</h3>
-
-  <ul>
-    <li>Praktik desain</li>
-    <li>Presentasi</li>
-  </ul>
-
-  <a href="pertemuan3.html" class="btn btn-purple">Buka LKPD 3</a>
-  <br>
-  <a href="https://docs.google.com/forms/d/e/1FAIpQLScE2MVOcCuNQI6hHBYxL5UDvIS_yyMBDMTEGWsiQ6f2anBxDQ/viewform" target="_blank" class="btn btn-outline">
-    Upload Hasil
-  </a>
+<span class="tag purple">PERTEMUAN 3</span>
+<h3>Praktik & Produk Desain</h3>
+<ul>
+<li>Praktik desain</li>
+<li>Presentasi</li>
+</ul>
+<a href="pertemuan3.html" class="btn btn-purple">Buka LKPD 3</a>
 </div>
 
 </div>
