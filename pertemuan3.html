@@ -38,11 +38,6 @@ body {
   background: white;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: 0.3s;
-}
-
-.section:hover {
-  transform: translateY(-3px);
 }
 
 textarea, input {
@@ -79,10 +74,6 @@ textarea, input {
   text-decoration: none;
 }
 
-.button:hover {
-  background: #1e8449;
-}
-
 .back-btn {
   display: inline-block;
   margin-bottom: 15px;
@@ -94,11 +85,7 @@ textarea, input {
 }
 
 .action-buttons {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 25px;
-  flex-wrap: wrap;
+  margin-top: 20px;
 }
 
 .save-btn {
@@ -108,32 +95,6 @@ textarea, input {
   border: none;
   border-radius: 8px;
   cursor: pointer;
-}
-
-.save-btn:hover {
-  background: #2980b9;
-}
-
-.back-bottom {
-  text-decoration: none;
-  padding: 10px 16px;
-  background: #2c3e50;
-  color: white;
-  border-radius: 8px;
-}
-
-@media(max-width:600px){
-  .hero h1 {font-size: 20px;}
-
-  .action-buttons {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .save-btn, .back-bottom {
-    width: 100%;
-    text-align: center;
-  }
 }
 </style>
 </head>
@@ -149,91 +110,61 @@ textarea, input {
 
 <div class="container">
 
-<a href="index.html" class="back-btn">⬅ Kembali ke Beranda</a>
+<a href="index.html" class="back-btn">⬅ Kembali</a>
 
 <div class="section">
 <b>Identitas Siswa</b>
-<p>ID / Nama:</p>
 <input type="text" id="id_siswa" placeholder="Masukkan ID atau Nama">
 </div>
 
-<!-- A -->
 <div class="section">
-<h3>🛠 A. Aktivitas 1 – Praktik Tools</h3>
+<h3>🛠 Praktik Tools</h3>
 
 <table class="table">
+<tr><th>Tool</th><th>Fungsi</th><th>Digunakan</th></tr>
+
 <tr>
-<th>Nama Tool</th>
-<th>Fungsi</th>
-<th>Digunakan Pada</th>
+<td><input id="tool1"></td>
+<td><input id="fungsi1"></td>
+<td><input id="pakai1"></td>
 </tr>
 
 <tr>
-<td><input id="tool1_nama"></td>
-<td><input id="tool1_fungsi"></td>
-<td><input id="tool1_penggunaan"></td>
-</tr>
-
-<tr>
-<td><input id="tool2_nama"></td>
-<td><input id="tool2_fungsi"></td>
-<td><input id="tool2_penggunaan"></td>
-</tr>
-
-<tr>
-<td><input id="tool3_nama"></td>
-<td><input id="tool3_fungsi"></td>
-<td><input id="tool3_penggunaan"></td>
-</tr>
-
-<tr>
-<td><input id="tool4_nama"></td>
-<td><input id="tool4_fungsi"></td>
-<td><input id="tool4_penggunaan"></td>
+<td><input id="tool2"></td>
+<td><input id="fungsi2"></td>
+<td><input id="pakai2"></td>
 </tr>
 
 </table>
 </div>
 
-<!-- B -->
 <div class="section">
-<h3>🎯 B. Aktivitas 2 – Penyelesaian Karya</h3>
+<h3>🎯 Penyelesaian</h3>
 
-<p>Jenis Desain:</p>
-<input id="jenis_desain">
-
-<p>Tujuan:</p>
-<input id="tujuan">
-
-<p>Target Pengguna:</p>
-<input id="target">
+<input id="jenis" placeholder="Jenis desain">
+<input id="tujuan" placeholder="Tujuan">
+<input id="target" placeholder="Target pengguna">
 </div>
 
-<!-- D -->
 <div class="section">
-<h3>📤 D. Upload ke Google Form</h3>
+<h3>📤 Upload</h3>
 
-<a href="https://docs.google.com/forms/d/e/1FAIpQLScE2MVOcCuNQI6hHBYxL5UDvIS_yyMBDMTEGWsiQ6f2anBxDQ/viewform" target="_blank" class="button">
-Upload Hasil Desain
-</a>
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScE2MVOcCuNQI6hHBYxL5UDvIS_yyMBDMTEGWsiQ6f2anBxDQ/viewform?embedded=true" width="100%" height="500"></iframe>
 
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScE2MVOcCuNQI6hHBYxL5UDvIS_yyMBDMTEGWsiQ6f2anBxDQ/viewform?embedded=true" width="100%" height="600"></iframe>
 </div>
 
-<!-- E -->
 <div class="section">
-<h3>💬 E. Presentasi & Refleksi</h3>
+<h3>💬 Refleksi</h3>
 
-<textarea id="refleksi_konsep" placeholder="Konsep desain"></textarea>
-<textarea id="refleksi_tools" placeholder="Tools utama"></textarea>
-<textarea id="refleksi_kelebihan" placeholder="Kelebihan desain"></textarea>
-<textarea id="refleksi_masukan" placeholder="Masukan"></textarea>
+<textarea id="ref1" placeholder="Konsep"></textarea>
+<textarea id="ref2" placeholder="Tools"></textarea>
+<textarea id="ref3" placeholder="Kelebihan"></textarea>
 </div>
 
-<!-- TOMBOL -->
 <div class="action-buttons">
 <button class="save-btn" onclick="simpanData()">💾 Simpan Jawaban</button>
-<a href="index.html" class="back-bottom">⬅ Kembali</a>
+</div>
+
 </div>
 
 <script>
@@ -242,13 +173,13 @@ function simpanData() {
   const id = document.getElementById("id_siswa").value;
 
   if(id === ""){
-    alert("⚠️ Isi ID/Nama terlebih dahulu");
+    alert("Isi ID dulu!");
     return;
   }
 
   let jawaban = {};
 
-  document.querySelectorAll("textarea, input").forEach(el => {
+  document.querySelectorAll("input, textarea").forEach(el => {
     if(el.id && el.id !== "id_siswa"){
       jawaban[el.id] = el.value;
     }
@@ -256,6 +187,9 @@ function simpanData() {
 
   fetch("https://script.google.com/macros/s/AKfycbyOH2CYJmGS_2phOaaM48yept3J4E81T_0gOSvxgwHIlJUO3HhYkY6Q-Ektvs0gE0J9qA/exec", {
     method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
     body: JSON.stringify({
       id: id,
       pertemuan: "Pertemuan 3",
@@ -263,11 +197,10 @@ function simpanData() {
     })
   })
   .then(res => res.text())
-  .then(() => {
-    alert("✅ Jawaban berhasil disimpan");
-  })
-  .catch(() => {
-    alert("❌ Gagal menyimpan");
+  .then(() => alert("✅ Tersimpan"))
+  .catch(err => {
+    console.error(err);
+    alert("❌ Gagal");
   });
 
 }
