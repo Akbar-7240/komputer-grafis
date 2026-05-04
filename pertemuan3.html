@@ -8,7 +8,6 @@
 body {
   font-family: 'Segoe UI', sans-serif;
   background: #f4f6f9;
-  margin: 0;
   padding: 20px;
 }
 
@@ -18,49 +17,29 @@ body {
   background: white;
   padding: 25px;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-h2 {
-  color: #8e44ad;
-}
-
-.card {
+.section {
   margin-top: 20px;
   padding: 15px;
-  border-left: 5px solid #8e44ad;
-  background: #f5eef8;
-  border-radius: 8px;
+  background: #ecf5ff;
+  border-left: 5px solid #3498db;
 }
 
-textarea {
+textarea, input {
   width: 100%;
-  height: 90px;
-  margin-top: 10px;
-  padding: 10px;
-  border-radius: 6px;
+  margin-top: 8px;
+  padding: 8px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th, .table td {
   border: 1px solid #ccc;
-}
-
-button {
-  margin-top: 20px;
-  padding: 12px 20px;
-  background: #8e44ad;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-button:hover {
-  background: #6c3483;
-}
-
-.back {
-  display: inline-block;
-  margin-top: 20px;
-  text-decoration: none;
-  color: #2c3e50;
+  padding: 8px;
 }
 </style>
 </head>
@@ -69,44 +48,59 @@ button:hover {
 
 <div class="container">
 
-<h2>🟣 LKPD Pertemuan 3</h2>
+<h2>📘 LKPD PERTEMUAN 3</h2>
 
-<div class="card">
-<p><b>A. Deskripsi Produk</b></p>
-<p>Jelaskan desain yang telah kelompokmu buat.</p>
-<textarea></textarea>
+<div class="section">
+<b>A. Aktivitas 1 – Praktik Tools</b>
+
+<table class="table">
+<tr>
+<th>Nama Tool</th>
+<th>Fungsi</th>
+<th>Digunakan Pada</th>
+</tr>
+
+<tr><td><input></td><td><input></td><td><input></td></tr>
+<tr><td><input></td><td><input></td><td><input></td></tr>
+<tr><td><input></td><td><input></td><td><input></td></tr>
+<tr><td><input></td><td><input></td><td><input></td></tr>
+
+</table>
+
 </div>
 
-<div class="card">
-<p><b>B. Proses Pembuatan</b></p>
-<p>Jelaskan langkah-langkah pembuatan desain.</p>
-<textarea></textarea>
+<div class="section">
+<b>B. Aktivitas 2 – Penyelesaian Karya</b>
+
+<p>Jenis Desain:</p>
+<input>
+
+<p>Tujuan:</p>
+<input>
+
+<p>Target Pengguna:</p>
+<input>
+
 </div>
 
-<div class="card">
-<p><b>C. Tools yang Digunakan</b></p>
-<p>Sebutkan tools yang digunakan dan fungsinya.</p>
+<div class="section">
+<b>C. Aktivitas 3 – Presentasi</b>
+
+<p>Konsep desain:</p>
 <textarea></textarea>
+
+<p>Tools utama:</p>
+<textarea></textarea>
+
+<p>Kelebihan desain:</p>
+<textarea></textarea>
+
+<p>Masukan:</p>
+<textarea></textarea>
+
 </div>
 
-<div class="card">
-<p><b>D. Evaluasi</b></p>
-<p>Apa kendala yang dihadapi dan bagaimana solusinya?</p>
-<textarea></textarea>
-</div>
-
-<div class="card">
-<p><b>E. Refleksi</b></p>
-<p>Apa yang kamu pelajari dari kegiatan ini?</p>
-<textarea></textarea>
-</div>
-
-<button onclick="alert('Jawaban berhasil disimpan (simulasi)')">
-💾 Simpan Jawaban
-</button>
-
-<br>
-<a href="index.html" class="back">⬅ Kembali</a>
+<button onclick="alert('Jawaban tersimpan')">💾 Simpan</button>
 
 </div>
 
