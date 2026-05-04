@@ -23,23 +23,36 @@ body {
 
 h2 {
   color: #3498db;
+  text-align: center;
 }
 
-.card {
+.section {
   margin-top: 20px;
   padding: 15px;
-  border-left: 5px solid #3498db;
   background: #ecf5ff;
+  border-left: 5px solid #3498db;
   border-radius: 8px;
 }
 
 textarea {
   width: 100%;
-  height: 90px;
-  margin-top: 10px;
+  height: 80px;
+  margin-top: 8px;
   padding: 10px;
   border-radius: 6px;
   border: 1px solid #ccc;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.table th, .table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
 }
 
 button {
@@ -69,52 +82,110 @@ button:hover {
 
 <div class="container">
 
-<h2>📘 LKPD Pertemuan 1</h2>
+<h2>📘 LKPD PERTEMUAN 1</h2>
 
-<div class="card">
-<p><b>A. Pertanyaan Pemantik</b></p>
-<p>Mengapa gambar bisa pecah saat diperbesar?</p>
-<textarea></textarea>
+<div class="section">
+<b>Identitas</b><br>
+Mata Pelajaran : Dasar-Dasar Desain Grafis <br>
+Kelas/Semester : X / Genap <br>
+Materi : Komputer Grafis <br>
+Pertemuan : 1 <br>
+Model : Project Based Learning (PjBL)
 </div>
 
-<div class="card">
-<p><b>B. Identifikasi Konsep</b></p>
-<ul>
-<li>Jelaskan pengertian komputer grafis</li>
-<li>Jelaskan pengertian bitmap</li>
-<li>Jelaskan pengertian vektor</li>
-</ul>
-<textarea></textarea>
+<div class="section">
+<b>Tujuan Pembelajaran</b>
+<ol>
+<li>Mengidentifikasi pengertian komputer grafis, bitmap, dan vektor.</li>
+<li>Mengklasifikasikan jenis gambar digital berdasarkan karakteristiknya.</li>
+</ol>
 </div>
 
-<div class="card">
-<p><b>C. Analisis</b></p>
-<p>Bandingkan bitmap dan vektor berdasarkan:</p>
-<ul>
-<li>Kualitas gambar</li>
-<li>Ukuran file</li>
-<li>Penggunaan</li>
-</ul>
-<textarea></textarea>
+<div class="section">
+<b>Petunjuk Umum</b>
+<ol>
+<li>Kerjakan secara berkelompok</li>
+<li>Baca instruksi dengan teliti</li>
+<li>Diskusikan jawaban</li>
+<li>Tuliskan jawaban dengan jelas</li>
+</ol>
 </div>
 
-<div class="card">
-<p><b>D. Penerapan</b></p>
-<p>Jika kamu ingin membuat logo, jenis gambar apa yang kamu pilih? Jelaskan alasannya.</p>
-<textarea></textarea>
+<div class="section">
+<b>A. Permasalahan</b>
+<p>
+Dalam kehidupan sehari-hari, kita sering melihat poster, logo, spanduk digital, atau konten media sosial.
+Namun, beberapa desain terlihat pecah saat diperbesar, sementara yang lain tetap tajam.
+</p>
+
+<p><b>Pertanyaan:</b><br>
+Mengapa hasil desain grafis bisa terlihat pecah atau tidak jelas, dan bagaimana jenis gambar digital memengaruhi kualitas desain tersebut?
+</p>
+
+<textarea placeholder="Tuliskan jawaban..."></textarea>
 </div>
 
-<div class="card">
-<p><b>E. Rencana Proyek</b></p>
-<ul>
-<li>Jenis desain</li>
-<li>Jenis gambar</li>
-<li>Alasan</li>
-</ul>
+<div class="section">
+<b>B. Aktivitas 1 – Identifikasi Konsep</b>
+
+<p>1. Apa yang dimaksud dengan komputer grafis?</p>
 <textarea></textarea>
+
+<p>2. Apa yang dimaksud dengan gambar bitmap?</p>
+<textarea></textarea>
+
+<p>3. Apa yang dimaksud dengan gambar vektor?</p>
+<textarea></textarea>
+
 </div>
 
-<button onclick="alert('Jawaban berhasil disimpan (simulasi)')">
+<div class="section">
+<b>C. Aktivitas 2 – Diskusi Kelompok</b>
+
+<p>1. Sebutkan minimal 3 karakteristik gambar bitmap!</p>
+<textarea></textarea>
+
+<p>2. Sebutkan minimal 3 karakteristik gambar vektor!</p>
+<textarea></textarea>
+
+<p>3. Jenis gambar apa yang lebih cocok untuk logo? Jelaskan!</p>
+<textarea></textarea>
+
+</div>
+
+<div class="section">
+<b>D. Aktivitas 3 – Perencanaan Proyek</b>
+
+<table class="table">
+<tr>
+<th>No</th>
+<th>Jenis Produk Grafis</th>
+<th>Jenis Gambar</th>
+<th>Alasan</th>
+</tr>
+
+<tr>
+<td>1</td>
+<td><textarea></textarea></td>
+<td><textarea></textarea></td>
+<td><textarea></textarea></td>
+</tr>
+
+<tr>
+<td>2</td>
+<td><textarea></textarea></td>
+<td><textarea></textarea></td>
+<td><textarea></textarea></td>
+</tr>
+
+</table>
+
+<p><b>Rencana Singkat Proyek:</b></p>
+<textarea></textarea>
+
+</div>
+
+<button onclick="alert('Jawaban tersimpan (simulasi)')">
 💾 Simpan Jawaban
 </button>
 
