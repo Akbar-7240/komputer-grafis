@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>Kegiatan Pembelajaran</title>
+<title>LKPD Komputer Grafis</title>
 
 <style>
 body {
@@ -11,87 +11,126 @@ body {
   background: #f4f6f9;
 }
 
-.header {
-  background: linear-gradient(90deg, #3498db, #2c3e50);
-  color: white;
-  padding: 40px;
-  text-align: center;
-}
-
 .container {
-  padding: 30px;
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
 }
 
-.card-container {
+.hero {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hero-text {
+  max-width: 50%;
+}
+
+.hero h1 {
+  color: #1f3c88;
+}
+
+.cards {
   display: flex;
   gap: 20px;
-  flex-wrap: wrap;
+  margin-top: 30px;
 }
 
 .card {
   flex: 1;
-  min-width: 250px;
   background: white;
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: 0.3s;
 }
 
-.card:hover {
-  transform: translateY(-5px);
+.card h3 {
+  margin-top: 0;
 }
 
 .btn {
   display: inline-block;
-  margin-top: 15px;
-  padding: 10px 15px;
-  background: #3498db;
-  color: white;
-  text-decoration: none;
+  margin-top: 10px;
+  padding: 10px 14px;
   border-radius: 8px;
+  text-decoration: none;
+  color: white;
 }
 
-.desc {
-  margin-top: 10px;
-  color: #555;
+.btn-blue { background: #3498db; }
+.btn-green { background: #27ae60; }
+.btn-purple { background: #8e44ad; }
+
+.btn-outline {
+  background: white;
+  border: 2px solid #ccc;
+  color: #333;
 }
 </style>
 </head>
 
 <body>
 
-<div class="header">
-  <h1>📘 KEGIATAN PEMBELAJARAN</h1>
-  <p>Project Based Learning (PjBL) - Komputer Grafis</p>
-</div>
-
 <div class="container">
 
-<h2>🧭 Arahan Kegiatan</h2>
-<p class="desc">
-Peserta didik mengerjakan LKPD secara bertahap pada setiap pertemuan,
-dimulai dari pemahaman konsep hingga menghasilkan produk desain grafis.
-</p>
-
-<div class="card-container">
-
-<div class="card">
-<h3>🔵 Pertemuan 1</h3>
-<p>Pengenalan Komputer Grafis (Bitmap & Vektor)</p>
-<a href="pertemuan1.html" class="btn">Buka LKPD</a>
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-text">
+    <h1>KEGIATAN PEMBELAJARAN</h1>
+    <p>
+      Peserta didik akan melaksanakan pembelajaran berbasis Project Based Learning (PjBL)
+      yang terdiri dari 3 pertemuan hingga menghasilkan produk desain grafis.
+    </p>
+  </div>
 </div>
 
+<!-- CARDS -->
+<div class="cards">
+
+<!-- PERTEMUAN 1 -->
 <div class="card">
-<h3>🟢 Pertemuan 2</h3>
-<p>Format File & Software Desain</p>
-<a href="pertemuan2.html" class="btn">Buka LKPD</a>
+  <h3>PERTEMUAN 1</h3>
+  <p><b>Pengenalan Komputer Grafis</b></p>
+  <ul>
+    <li>Memahami komputer grafis</li>
+    <li>Bitmap & Vektor</li>
+  </ul>
+
+  <a href="pertemuan1.html" class="btn btn-blue">Buka LKPD 1</a>
+  <br>
+  <a href="https://docs.google.com/forms" target="_blank" class="btn btn-outline">Upload Hasil</a>
 </div>
 
+<!-- PERTEMUAN 2 -->
 <div class="card">
-<h3>🟣 Pertemuan 3</h3>
-<p>Praktik & Produk Desain Grafis</p>
-<a href="pertemuan3.html" class="btn">Buka LKPD</a>
+  <h3>PERTEMUAN 2</h3>
+  <p><b>Format File & Software</b></p>
+  <ul>
+    <li>Format JPG, PNG, SVG</li>
+    <li>Tools desain</li>
+  </ul>
+
+  <a href="pertemuan2.html" class="btn btn-green">Buka LKPD 2</a>
+  <br>
+  <a href="https://docs.google.com/forms" target="_blank" class="btn btn-outline">Upload Hasil</a>
+</div>
+
+<!-- PERTEMUAN 3 -->
+<div class="card">
+  <h3>PERTEMUAN 3</h3>
+  <p><b>Praktik & Produk Desain</b></p>
+  <ul>
+    <li>Praktik desain</li>
+    <li>Presentasi</li>
+  </ul>
+
+  <a href="pertemuan3.html" class="btn btn-purple">Buka LKPD 3</a>
+  <br>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLScE2MVOcCuNQI6hHBYxL5UDvIS_yyMBDMTEGWsiQ6f2anBxDQ/viewform" target="_blank" class="btn btn-outline">Upload Hasil</a>
 </div>
 
 </div>
