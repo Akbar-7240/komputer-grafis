@@ -161,6 +161,13 @@ textarea, input {
 
 <a href="index.html" class="back-btn">⬅ Kembali ke Beranda</a>
 
+<!-- ✅ TAMBAHAN ID SISWA -->
+<div class="section">
+<b>Identitas Siswa</b>
+<p>ID / Nama:</p>
+<input type="text" id="id_siswa" placeholder="Masukkan ID atau Nama">
+</div>
+
 <!-- A -->
 <div class="section">
 <h3>🛠 A. Aktivitas 1 – Praktik Tools</h3>
@@ -216,7 +223,7 @@ Upload Hasil Desain
 
 <!-- TOMBOL BAWAH -->
 <div class="action-buttons">
-  <button class="save-btn" onclick="alert('Jawaban tersimpan')">
+  <button class="save-btn" onclick="simpanData()">
     💾 Simpan
   </button>
 
@@ -226,6 +233,45 @@ Upload Hasil Desain
 </div>
 
 </div>
+
+<!-- ✅ SCRIPT SIMPAN -->
+<script>
+function simpanData() {
+
+  const id = document.getElementById("id_siswa").value;
+
+  if(id === ""){
+    alert("⚠️ Isi ID siswa terlebih dahulu");
+    return;
+  }
+
+  const inputs = document.querySelectorAll("textarea, input");
+  let jawaban = [];
+
+  inputs.forEach(el => {
+    if(el.id !== "id_siswa"){
+      jawaban.push(el.value);
+    }
+  });
+
+  fetch("https://script.google.com/macros/s/AKfycbxkqVU3BE2kY6_tQuKOxXm6BtfJAWNkEQXHnf4xS57xhkAmAmlRdV2nTWwADluIXiyp/exec", {
+    method: "POST",
+    body: JSON.stringify({
+      id: id,
+      pertemuan: "Pertemuan 3",
+      jawaban: jawaban.join(" | ")
+    })
+  })
+  .then(res => res.json())
+  .then(data => {
+    alert("✅ Jawaban berhasil disimpan ke Google Sheets");
+  })
+  .catch(err => {
+    alert("❌ Gagal menyimpan");
+  });
+
+}
+</script>
 
 </body>
 </html>
