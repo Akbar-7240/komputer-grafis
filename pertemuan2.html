@@ -172,18 +172,12 @@ Bagaimana pemilihan format file dan software memengaruhi hasil desain?</p>
 <!-- ✅ TOMBOL SUDAH TERHUBUNG -->
 <button onclick="simpanData()">💾 Simpan Jawaban</button>
 
-<br>
-<a href="index.html" class="back">⬅ Kembali ke Beranda</a>
-
-</div>
-
-<!-- ✅ SCRIPT GOOGLE SHEETS -->
 <script>
 function simpanData() {
 
-  const id = document.getElementById("id_siswa").value;
+  const idInput = document.getElementById("id_siswa");
 
-  if(id === ""){
+  if(!idInput || idInput.value === ""){
     alert("⚠️ Isi ID siswa terlebih dahulu");
     return;
   }
@@ -199,18 +193,22 @@ function simpanData() {
 
   fetch("https://script.google.com/macros/s/AKfycbxzSSSMttKWdeab7kUMjai_z4Bj9xG4I2M9FkbCvirg38rU30d6ZpCmYGay9mDAg0HC/exec", {
     method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
     body: JSON.stringify({
-      id: id,
-      pertemuan: "Pertemuan 2",
+      id: idInput.value,
+      pertemuan: "Pertemuan 1",
       jawaban: jawaban.join(" | ")
     })
   })
-  .then(res => res.json())
+  .then(res => res.text()) // 🔥 penting
   .then(data => {
     alert("✅ Jawaban berhasil disimpan ke Google Sheets");
   })
   .catch(err => {
     alert("❌ Gagal menyimpan");
+    console.error(err);
   });
 
 }
