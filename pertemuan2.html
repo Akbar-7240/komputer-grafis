@@ -22,45 +22,48 @@ body {
 }
 
 h2 {
-  color: #27ae60;
+  text-align: center;
+  color: #3498db;
 }
 
-.card {
+.section {
   margin-top: 20px;
   padding: 15px;
-  border-left: 5px solid #27ae60;
-  background: #eafaf1;
+  background: #ecf5ff;
+  border-left: 5px solid #3498db;
   border-radius: 8px;
 }
 
-textarea {
+textarea, input {
   width: 100%;
-  height: 90px;
-  margin-top: 10px;
-  padding: 10px;
+  margin-top: 8px;
+  padding: 8px;
   border-radius: 6px;
   border: 1px solid #ccc;
 }
 
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.table th, .table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+
 button {
   margin-top: 20px;
-  padding: 12px 20px;
-  background: #27ae60;
+  padding: 12px;
+  background: #3498db;
   color: white;
   border: none;
   border-radius: 8px;
-  cursor: pointer;
 }
 
 button:hover {
-  background: #1e8449;
-}
-
-.back {
-  display: inline-block;
-  margin-top: 20px;
-  text-decoration: none;
-  color: #2c3e50;
+  background: #2980b9;
 }
 </style>
 </head>
@@ -69,44 +72,90 @@ button:hover {
 
 <div class="container">
 
-<h2>🟢 LKPD Pertemuan 2</h2>
+<h2>📘 LKPD PERTEMUAN 2</h2>
 
-<div class="card">
-<p><b>A. Pemahaman</b></p>
-<p>Jelaskan pengertian format file dalam desain grafis.</p>
+<div class="section">
+<b>Identitas</b><br>
+Mata Pelajaran : Dasar-Dasar Desain Grafis <br>
+Kelas/Semester : X / Genap <br>
+Materi : Komputer Grafis <br>
+Pertemuan : 2
+</div>
+
+<div class="section">
+<b>A. Permasalahan</b>
+<p>
+Sebuah desain grafis dapat disimpan dalam berbagai format file dan dibuat menggunakan software berbeda. Pemilihan yang tidak tepat dapat menyebabkan kualitas menurun.
+</p>
+
+<p><b>Pertanyaan:</b>  
+Bagaimana pemilihan format file dan software memengaruhi hasil desain?</p>
+
 <textarea></textarea>
 </div>
 
-<div class="card">
-<p><b>B. Analisis</b></p>
-<p>Bandingkan format JPG, PNG, dan SVG.</p>
+<div class="section">
+<b>B. Aktivitas 1 – Analisis Format File</b>
+
+<table class="table">
+<tr>
+<th>Format</th>
+<th>Jenis</th>
+<th>Kegunaan</th>
+<th>Kelebihan</th>
+<th>Kekurangan</th>
+</tr>
+
+<tr><td>JPG</td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td></tr>
+<tr><td>PNG</td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td></tr>
+<tr><td>SVG</td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td></tr>
+<tr><td>EPS</td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td></tr>
+<tr><td>PSD</td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td></tr>
+</table>
+
+<p>1. Format terbaik untuk logo?</p>
 <textarea></textarea>
+
+<p>2. Format terbaik untuk foto?</p>
+<textarea></textarea>
+
 </div>
 
-<div class="card">
-<p><b>C. Evaluasi</b></p>
-<p>Kapan sebaiknya menggunakan PNG dibanding JPG?</p>
-<textarea></textarea>
+<div class="section">
+<b>C. Aktivitas 2 – Eksplorasi Software</b>
+
+<p>1. Nama software:</p>
+<input type="text">
+
+<p>2. Identifikasi tools:</p>
+
+<table class="table">
+<tr><th>No</th><th>Nama Tool</th><th>Fungsi</th></tr>
+<tr><td>1</td><td><input></td><td><input></td></tr>
+<tr><td>2</td><td><input></td><td><input></td></tr>
+<tr><td>3</td><td><input></td><td><input></td></tr>
+</table>
+
 </div>
 
-<div class="card">
-<p><b>D. Eksplorasi Software</b></p>
-<p>Sebutkan software desain grafis yang kamu gunakan dan tools-nya.</p>
+<div class="section">
+<b>D. Aktivitas 3 – Perencanaan Teknis</b>
+
+<p>Software:</p>
+<input>
+
+<p>Jenis gambar:</p>
+<input>
+
+<p>Format file:</p>
+<input>
+
+<p>Alasan:</p>
 <textarea></textarea>
+
 </div>
 
-<div class="card">
-<p><b>E. Perencanaan Teknis</b></p>
-<p>Tentukan software, jenis gambar, dan format file yang akan digunakan untuk proyek.</p>
-<textarea></textarea>
-</div>
-
-<button onclick="alert('Jawaban berhasil disimpan (simulasi)')">
-💾 Simpan Jawaban
-</button>
-
-<br>
-<a href="index.html" class="back">⬅ Kembali</a>
+<button onclick="alert('Jawaban tersimpan')">💾 Simpan</button>
 
 </div>
 
