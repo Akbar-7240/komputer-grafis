@@ -66,7 +66,6 @@ button:hover {
   background: #2980b9;
 }
 
-/* TAMBAHAN tombol kembali */
 .back {
   display: inline-block;
   margin-top: 15px;
@@ -81,6 +80,13 @@ button:hover {
 <div class="container">
 
 <h2>📘 LKPD PERTEMUAN 2</h2>
+
+<!-- ✅ TAMBAHAN ID SISWA -->
+<div class="section">
+<b>Identitas Siswa</b>
+<p>ID / Nama:</p>
+<input type="text" id="id_siswa" placeholder="Masukkan ID atau Nama">
+</div>
 
 <div class="section">
 <b>Identitas</b><br>
@@ -163,12 +169,52 @@ Bagaimana pemilihan format file dan software memengaruhi hasil desain?</p>
 
 </div>
 
-<button onclick="alert('Jawaban tersimpan')">💾 Simpan</button>
+<!-- ✅ TOMBOL SUDAH TERHUBUNG -->
+<button onclick="simpanData()">💾 Simpan Jawaban</button>
 
 <br>
 <a href="index.html" class="back">⬅ Kembali ke Beranda</a>
 
 </div>
+
+<!-- ✅ SCRIPT GOOGLE SHEETS -->
+<script>
+function simpanData() {
+
+  const id = document.getElementById("id_siswa").value;
+
+  if(id === ""){
+    alert("⚠️ Isi ID siswa terlebih dahulu");
+    return;
+  }
+
+  const inputs = document.querySelectorAll("textarea, input");
+  let jawaban = [];
+
+  inputs.forEach(el => {
+    if(el.id !== "id_siswa"){
+      jawaban.push(el.value);
+    }
+  });
+
+  fetch("https://script.google.com/macros/s/AKfycbxkqVU3BE2kY6_tQuKOxXm6BtfJAWNkEQXHnf4xS57xhkAmAmlRdV2nTWwADluIXiyp/exec", {
+    method: "POST",
+    body: JSON.stringify({
+      id: id,
+      pertemuan: "Pertemuan 2",
+      jawaban: jawaban.join(" | ")
+    })
+  })
+  .then(res => res.json())
+  .then(data => {
+    alert("✅ Jawaban berhasil disimpan ke Google Sheets");
+  })
+  .catch(err => {
+    alert("❌ Gagal menyimpan");
+  });
+
+}
+</script>
 
 </body>
 </html>
