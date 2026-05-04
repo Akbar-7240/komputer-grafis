@@ -1,20 +1,102 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-<title>Kegiatan</title>
+<meta charset="UTF-8">
+<title>Kegiatan Pembelajaran</title>
+
+<style>
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background: #f4f6f9;
+}
+
+.header {
+  background: linear-gradient(90deg, #3498db, #2c3e50);
+  color: white;
+  padding: 40px;
+  text-align: center;
+}
+
+.container {
+  padding: 30px;
+}
+
+.card-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  flex: 1;
+  min-width: 250px;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 15px;
+  background: #3498db;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+.desc {
+  margin-top: 10px;
+  color: #555;
+}
+</style>
 </head>
 
 <body>
 
-<h1>Kegiatan Pembelajaran</h1>
+<div class="header">
+  <h1>📘 KEGIATAN PEMBELAJARAN</h1>
+  <p>Project Based Learning (PjBL) - Komputer Grafis</p>
+</div>
 
-<p>Pilih Pertemuan:</p>
+<div class="container">
 
-<ul>
-<li><a href="pertemuan1.html">Pertemuan 1</a></li>
-<li><a href="pertemuan2.html">Pertemuan 2</a></li>
-<li><a href="pertemuan3.html">Pertemuan 3</a></li>
-</ul>
+<h2>🧭 Arahan Kegiatan</h2>
+<p class="desc">
+Peserta didik mengerjakan LKPD secara bertahap pada setiap pertemuan,
+dimulai dari pemahaman konsep hingga menghasilkan produk desain grafis.
+</p>
+
+<div class="card-container">
+
+<div class="card">
+<h3>🔵 Pertemuan 1</h3>
+<p>Pengenalan Komputer Grafis (Bitmap & Vektor)</p>
+<a href="pertemuan1.html" class="btn">Buka LKPD</a>
+</div>
+
+<div class="card">
+<h3>🟢 Pertemuan 2</h3>
+<p>Format File & Software Desain</p>
+<a href="pertemuan2.html" class="btn">Buka LKPD</a>
+</div>
+
+<div class="card">
+<h3>🟣 Pertemuan 3</h3>
+<p>Praktik & Produk Desain Grafis</p>
+<a href="pertemuan3.html" class="btn">Buka LKPD</a>
+</div>
+
+</div>
+
+</div>
 
 </body>
 </html>
