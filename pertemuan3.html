@@ -90,7 +90,7 @@ textarea, input {
   background: #1e8449;
 }
 
-/* BACK BUTTON */
+/* BACK BUTTON ATAS */
 .back-btn {
   display: inline-block;
   margin-bottom: 15px;
@@ -101,9 +101,49 @@ textarea, input {
   text-decoration: none;
 }
 
+/* TOMBOL BAWAH */
+.action-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 25px;
+  flex-wrap: wrap;
+}
+
+.save-btn {
+  padding: 12px 18px;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.save-btn:hover {
+  background: #2980b9;
+}
+
+.back-bottom {
+  text-decoration: none;
+  padding: 10px 16px;
+  background: #2c3e50;
+  color: white;
+  border-radius: 8px;
+}
+
 /* RESPONSIVE */
 @media(max-width:600px){
   .hero h1 {font-size: 20px;}
+
+  .action-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .save-btn, .back-bottom {
+    width: 100%;
+    text-align: center;
+  }
 }
 </style>
 </head>
@@ -174,10 +214,17 @@ Upload Hasil Desain
 <textarea placeholder="Masukan"></textarea>
 </div>
 
-<button onclick="alert('Jawaban tersimpan')">💾 Simpan</button>
+<!-- TOMBOL BAWAH -->
+<div class="action-buttons">
+  <button class="save-btn" onclick="alert('Jawaban tersimpan')">
+    💾 Simpan
+  </button>
 
-<br>
-<a href="index.html" class="back">⬅ Kembali ke Beranda</a>
+  <a href="index.html" class="back-bottom">
+    ⬅ Kembali ke Beranda
+  </a>
+</div>
+
 </div>
 
 </body>
