@@ -3,208 +3,218 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LKPD Pertemuan 3</title>
+<title>LKPD Komputer Grafis</title>
 
 <style>
 body {
-  font-family: 'Segoe UI', sans-serif;
   margin: 0;
+  font-family: 'Segoe UI', sans-serif;
   background: #f4f6f9;
-}
-
-/* NAVBAR */
-.navbar {
-  background: #1f3c88;
-  color: white;
-  padding: 15px 20px;
-  font-weight: bold;
 }
 
 /* HERO */
 .hero {
-  background: linear-gradient(to right, #8e44ad, #3498db);
-  color: white;
-  padding: 30px;
-  text-align: center;
-}
-
-/* CONTAINER */
-.container {
-  max-width: 1000px;
-  margin: auto;
-  padding: 20px;
-}
-
-/* CARD SECTION */
-.section {
-  margin-top: 20px;
-  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px;
   background: white;
+}
+
+.hero-text {
+  max-width: 500px;
+}
+
+.hero h1 {
+  font-size: 40px;
+  color: #1f3c88;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  color: #555;
+}
+
+/* ICON SECTION */
+.info-box {
+  background: #eef3f8;
+  margin: 20px;
+  padding: 20px;
   border-radius: 12px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  gap: 15px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon {
+  font-size: 24px;
+}
+
+/* CARDS */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   transition: 0.3s;
 }
 
-.section:hover {
-  transform: translateY(-3px);
+.card:hover {
+  transform: translateY(-8px);
 }
 
-/* INPUT */
-textarea, input {
-  width: 100%;
-  margin-top: 8px;
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-}
-
-/* TABLE */
-.table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 10px;
-}
-
-.table th {
-  background: #8e44ad;
+.tag {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 20px;
   color: white;
+  font-size: 12px;
+  margin-bottom: 10px;
 }
 
-.table th, .table td {
-  border: 1px solid #ddd;
-  padding: 10px;
-}
+.blue { background: #3498db; }
+.green { background: #27ae60; }
+.purple { background: #8e44ad; }
 
 /* BUTTON */
-.button {
+.btn {
   display: inline-block;
-  margin-top: 15px;
-  padding: 12px 18px;
-  background: #27ae60;
-  color: white;
-  border-radius: 8px;
-  text-decoration: none;
-}
-
-.button:hover {
-  background: #1e8449;
-}
-
-/* PREVIEW */
-.preview img {
-  max-width: 100%;
   margin-top: 10px;
-  border-radius: 10px;
-}
-
-/* BACK BUTTON */
-.back-btn {
-  display: inline-block;
-  margin-bottom: 15px;
-  padding: 10px 16px;
-  background: #2c3e50;
-  color: white;
+  padding: 10px 14px;
   border-radius: 8px;
   text-decoration: none;
+  color: white;
+}
+
+.btn-blue { background: #3498db; }
+.btn-green { background: #27ae60; }
+.btn-purple { background: #8e44ad; }
+
+.btn-outline {
+  background: white;
+  border: 2px solid #ccc;
+  color: #333;
 }
 
 /* RESPONSIVE */
-@media(max-width:600px){
-  .hero h1 {font-size: 20px;}
+@media(max-width:768px){
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<div class="navbar">📘 LKPD Komputer Grafis</div>
-
+<!-- HERO -->
 <div class="hero">
-<h1>PERTEMUAN 3</h1>
-<p>Praktik Tools & Produk Desain</p>
+  <div class="hero-text">
+    <h1>KEGIATAN PEMBELAJARAN</h1>
+    <p>
+      Peserta didik akan melaksanakan pembelajaran berbasis Project Based Learning (PjBL)
+      yang terdiri dari 3 pertemuan hingga menghasilkan produk desain grafis.
+    </p>
+  </div>
 </div>
 
-<div class="container">
+<!-- INFO ICON -->
+<div class="info-box">
 
-<a href="index.html" class="back-btn">⬅ Kembali ke Beranda</a>
+  <div class="info-item">
+    <div class="icon">📘</div>
+    <div>Bacalah materi sesuai pertemuan</div>
+  </div>
 
-<!-- A -->
-<div class="section">
-<h3>🛠 A. Aktivitas 1 – Praktik Tools</h3>
+  <div class="info-item">
+    <div class="icon">✏️</div>
+    <div>Kerjakan LKPD setiap pertemuan</div>
+  </div>
 
-<table class="table">
-<tr>
-<th>Nama Tool</th>
-<th>Fungsi</th>
-<th>Digunakan Pada</th>
-</tr>
+  <div class="info-item">
+    <div class="icon">👥</div>
+    <div>Diskusi bersama kelompok</div>
+  </div>
 
-<tr><td><input></td><td><input></td><td><input></td></tr>
-<tr><td><input></td><td><input></td><td><input></td></tr>
-<tr><td><input></td><td><input></td><td><input></td></tr>
-<tr><td><input></td><td><input></td><td><input></td></tr>
-</table>
-</div>
+  <div class="info-item">
+    <div class="icon">📤</div>
+    <div>Upload hasil kerja</div>
+  </div>
 
-<!-- B -->
-<div class="section">
-<h3>🎯 B. Aktivitas 2 – Penyelesaian Karya</h3>
+  <div class="info-item">
+    <div class="icon">📊</div>
+    <div>Presentasi hasil</div>
+  </div>
 
-<p>Jenis Desain:</p>
-<input>
-
-<p>Tujuan:</p>
-<input>
-
-<p>Target Pengguna:</p>
-<input>
-</div>
-
-<!-- C -->
-<div class="section">
-<h3>🖼 C. Preview Hasil Desain</h3>
-
-<input type="file" id="upload">
-
-<div class="preview" id="preview"></div>
-
-<p style="color:red;">*Hanya preview, bukan pengumpulan</p>
-</div>
-
-<!-- D -->
-<div class="section">
-<h3>📤 D. Upload ke Google Form</h3>
-
-<a href="https://docs.google.com/forms/d/e/1FAIpQLScE2MVOcCuNQI6hHBYxL5UDvIS_yyMBDMTEGWsiQ6f2anBxDQ/viewform" target="_blank" class="button">
-Upload Hasil Desain
-</a>
-
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScE2MVOcCuNQI6hHBYxL5UDvIS_yyMBDMTEGWsiQ6f2anBxDQ/viewform?embedded=true" width="100%" height="600"></iframe>
-</div>
-
-<!-- E -->
-<div class="section">
-<h3>💬 E. Presentasi & Refleksi</h3>
-
-<textarea placeholder="Konsep desain"></textarea>
-<textarea placeholder="Tools utama"></textarea>
-<textarea placeholder="Kelebihan desain"></textarea>
-<textarea placeholder="Masukan"></textarea>
-</div>
+  <div class="info-item">
+    <div class="icon">💡</div>
+    <div>Refleksi pembelajaran</div>
+  </div>
 
 </div>
 
-<script>
-// preview gambar
-document.getElementById("upload").addEventListener("change", function(e){
-  const file = e.target.files[0];
-  const reader = new FileReader();
-  reader.onload = function(ev){
-    document.getElementById("preview").innerHTML = "<img src='"+ev.target.result+"'>";
-  }
-  reader.readAsDataURL(file);
-});
-</script>
+<!-- CARDS -->
+<div class="cards">
+
+<!-- P1 -->
+<div class="card">
+  <span class="tag blue">PERTEMUAN 1</span>
+  <h3>Pengenalan Komputer Grafis</h3>
+
+  <ul>
+    <li>Memahami komputer grafis</li>
+    <li>Bitmap & vektor</li>
+  </ul>
+
+  <a href="pertemuan1.html" class="btn btn-blue">Buka LKPD 1</a>
+</div>
+
+<!-- P2 -->
+<div class="card">
+  <span class="tag green">PERTEMUAN 2</span>
+  <h3>Format File & Software</h3>
+
+  <ul>
+    <li>Format JPG, PNG, SVG</li>
+    <li>Tools desain</li>
+  </ul>
+
+  <a href="pertemuan2.html" class="btn btn-green">Buka LKPD 2</a>
+</div>
+
+<!-- P3 -->
+<div class="card">
+  <span class="tag purple">PERTEMUAN 3</span>
+  <h3>Praktik & Produk Desain</h3>
+
+  <ul>
+    <li>Praktik desain</li>
+    <li>Presentasi</li>
+  </ul>
+
+  <a href="pertemuan3.html" class="btn btn-purple">Buka LKPD 3</a>
+  <br>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLScE2MVOcCuNQI6hHBYxL5UDvIS_yyMBDMTEGWsiQ6f2anBxDQ/viewform" target="_blank" class="btn btn-outline">
+    Upload Hasil
+  </a>
+</div>
+
+</div>
 
 </body>
 </html>
