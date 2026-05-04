@@ -60,17 +60,11 @@ button {
   color: white;
   border: none;
   border-radius: 8px;
+  cursor: pointer;
 }
 
 button:hover {
   background: #2980b9;
-}
-
-.back {
-  display: inline-block;
-  margin-top: 15px;
-  text-decoration: none;
-  color: #2c3e50;
 }
 </style>
 </head>
@@ -81,7 +75,6 @@ button:hover {
 
 <h2>📘 LKPD PERTEMUAN 2</h2>
 
-<!-- ✅ TAMBAHAN ID SISWA -->
 <div class="section">
 <b>Identitas Siswa</b>
 <p>ID / Nama:</p>
@@ -105,7 +98,7 @@ Sebuah desain grafis dapat disimpan dalam berbagai format file dan dibuat menggu
 <p><b>Pertanyaan:</b>  
 Bagaimana pemilihan format file dan software memengaruhi hasil desain?</p>
 
-<textarea></textarea>
+<textarea id="A_permasalahan"></textarea>
 </div>
 
 <div class="section">
@@ -120,18 +113,53 @@ Bagaimana pemilihan format file dan software memengaruhi hasil desain?</p>
 <th>Kekurangan</th>
 </tr>
 
-<tr><td>JPG</td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td></tr>
-<tr><td>PNG</td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td></tr>
-<tr><td>SVG</td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td></tr>
-<tr><td>EPS</td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td></tr>
-<tr><td>PSD</td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td></tr>
+<tr>
+<td>JPG</td>
+<td><textarea id="JPG_jenis"></textarea></td>
+<td><textarea id="JPG_kegunaan"></textarea></td>
+<td><textarea id="JPG_kelebihan"></textarea></td>
+<td><textarea id="JPG_kekurangan"></textarea></td>
+</tr>
+
+<tr>
+<td>PNG</td>
+<td><textarea id="PNG_jenis"></textarea></td>
+<td><textarea id="PNG_kegunaan"></textarea></td>
+<td><textarea id="PNG_kelebihan"></textarea></td>
+<td><textarea id="PNG_kekurangan"></textarea></td>
+</tr>
+
+<tr>
+<td>SVG</td>
+<td><textarea id="SVG_jenis"></textarea></td>
+<td><textarea id="SVG_kegunaan"></textarea></td>
+<td><textarea id="SVG_kelebihan"></textarea></td>
+<td><textarea id="SVG_kekurangan"></textarea></td>
+</tr>
+
+<tr>
+<td>EPS</td>
+<td><textarea id="EPS_jenis"></textarea></td>
+<td><textarea id="EPS_kegunaan"></textarea></td>
+<td><textarea id="EPS_kelebihan"></textarea></td>
+<td><textarea id="EPS_kekurangan"></textarea></td>
+</tr>
+
+<tr>
+<td>PSD</td>
+<td><textarea id="PSD_jenis"></textarea></td>
+<td><textarea id="PSD_kegunaan"></textarea></td>
+<td><textarea id="PSD_kelebihan"></textarea></td>
+<td><textarea id="PSD_kekurangan"></textarea></td>
+</tr>
+
 </table>
 
 <p>1. Format terbaik untuk logo?</p>
-<textarea></textarea>
+<textarea id="logo_format"></textarea>
 
 <p>2. Format terbaik untuk foto?</p>
-<textarea></textarea>
+<textarea id="foto_format"></textarea>
 
 </div>
 
@@ -139,15 +167,31 @@ Bagaimana pemilihan format file dan software memengaruhi hasil desain?</p>
 <b>C. Aktivitas 2 – Eksplorasi Software</b>
 
 <p>1. Nama software:</p>
-<input type="text">
+<input type="text" id="software_nama">
 
 <p>2. Identifikasi tools:</p>
 
 <table class="table">
 <tr><th>No</th><th>Nama Tool</th><th>Fungsi</th></tr>
-<tr><td>1</td><td><input></td><td><input></td></tr>
-<tr><td>2</td><td><input></td><td><input></td></tr>
-<tr><td>3</td><td><input></td><td><input></td></tr>
+
+<tr>
+<td>1</td>
+<td><input id="tool1_nama"></td>
+<td><input id="tool1_fungsi"></td>
+</tr>
+
+<tr>
+<td>2</td>
+<td><input id="tool2_nama"></td>
+<td><input id="tool2_fungsi"></td>
+</tr>
+
+<tr>
+<td>3</td>
+<td><input id="tool3_nama"></td>
+<td><input id="tool3_fungsi"></td>
+</tr>
+
 </table>
 
 </div>
@@ -156,59 +200,53 @@ Bagaimana pemilihan format file dan software memengaruhi hasil desain?</p>
 <b>D. Aktivitas 3 – Perencanaan Teknis</b>
 
 <p>Software:</p>
-<input>
+<input id="D_software">
 
 <p>Jenis gambar:</p>
-<input>
+<input id="D_jenis">
 
 <p>Format file:</p>
-<input>
+<input id="D_format">
 
 <p>Alasan:</p>
-<textarea></textarea>
+<textarea id="D_alasan"></textarea>
 
 </div>
 
-<!-- ✅ TOMBOL SUDAH TERHUBUNG -->
 <button onclick="simpanData()">💾 Simpan Jawaban</button>
 
 <script>
 function simpanData() {
 
-  const idInput = document.getElementById("id_siswa");
+  const id = document.getElementById("id_siswa").value;
 
-  if(!idInput || idInput.value === ""){
-    alert("⚠️ Isi ID siswa terlebih dahulu");
+  if(id === ""){
+    alert("⚠️ Isi ID/Nama terlebih dahulu");
     return;
   }
 
-  const inputs = document.querySelectorAll("textarea, input");
-  let jawaban = [];
+  let jawaban = {};
 
-  inputs.forEach(el => {
-    if(el.id !== "id_siswa"){
-      jawaban.push(el.value);
+  document.querySelectorAll("textarea, input").forEach(el => {
+    if(el.id && el.id !== "id_siswa"){
+      jawaban[el.id] = el.value;
     }
   });
 
-  fetch("https://script.google.com/macros/s/AKfycbxzSSSMttKWdeab7kUMjai_z4Bj9xG4I2M9FkbCvirg38rU30d6ZpCmYGay9mDAg0HC/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbyOH2CYJmGS_2phOaaM48yept3J4E81T_0gOSvxgwHIlJUO3HhYkY6Q-Ektvs0gE0J9qA/exec", {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
     body: JSON.stringify({
-      id: idInput.value,
-      pertemuan: "Pertemuan 1",
-      jawaban: jawaban.join(" | ")
+      id: id,
+      pertemuan: "Pertemuan 2",
+      jawaban: jawaban
     })
   })
-  .then(res => res.text()) // 🔥 penting
-  .then(data => {
-    alert("✅ Jawaban berhasil disimpan ke Google Sheets");
+  .then(res => res.text())
+  .then(() => {
+    alert("✅ Jawaban berhasil disimpan");
   })
-  .catch(err => {
+  .catch(() => {
     alert("❌ Gagal menyimpan");
-    console.error(err);
   });
 
 }
