@@ -12,7 +12,6 @@ body {
   background: #f4f6f9;
 }
 
-/* NAVBAR */
 .navbar {
   background: #1f3c88;
   color: white;
@@ -20,7 +19,6 @@ body {
   font-weight: bold;
 }
 
-/* HERO */
 .hero {
   background: linear-gradient(to right, #8e44ad, #3498db);
   color: white;
@@ -28,14 +26,12 @@ body {
   text-align: center;
 }
 
-/* CONTAINER */
 .container {
   max-width: 1000px;
   margin: auto;
   padding: 20px;
 }
 
-/* CARD SECTION */
 .section {
   margin-top: 20px;
   padding: 20px;
@@ -49,7 +45,6 @@ body {
   transform: translateY(-3px);
 }
 
-/* INPUT */
 textarea, input {
   width: 100%;
   margin-top: 8px;
@@ -58,7 +53,6 @@ textarea, input {
   border: 1px solid #ccc;
 }
 
-/* TABLE */
 .table {
   width: 100%;
   border-collapse: collapse;
@@ -75,7 +69,6 @@ textarea, input {
   padding: 10px;
 }
 
-/* BUTTON */
 .button {
   display: inline-block;
   margin-top: 15px;
@@ -90,7 +83,6 @@ textarea, input {
   background: #1e8449;
 }
 
-/* BACK BUTTON ATAS */
 .back-btn {
   display: inline-block;
   margin-bottom: 15px;
@@ -101,7 +93,6 @@ textarea, input {
   text-decoration: none;
 }
 
-/* TOMBOL BAWAH */
 .action-buttons {
   display: flex;
   justify-content: space-between;
@@ -131,7 +122,6 @@ textarea, input {
   border-radius: 8px;
 }
 
-/* RESPONSIVE */
 @media(max-width:600px){
   .hero h1 {font-size: 20px;}
 
@@ -161,7 +151,6 @@ textarea, input {
 
 <a href="index.html" class="back-btn">⬅ Kembali ke Beranda</a>
 
-<!-- ✅ TAMBAHAN ID SISWA -->
 <div class="section">
 <b>Identitas Siswa</b>
 <p>ID / Nama:</p>
@@ -179,10 +168,30 @@ textarea, input {
 <th>Digunakan Pada</th>
 </tr>
 
-<tr><td><input></td><td><input></td><td><input></td></tr>
-<tr><td><input></td><td><input></td><td><input></td></tr>
-<tr><td><input></td><td><input></td><td><input></td></tr>
-<tr><td><input></td><td><input></td><td><input></td></tr>
+<tr>
+<td><input id="tool1_nama"></td>
+<td><input id="tool1_fungsi"></td>
+<td><input id="tool1_penggunaan"></td>
+</tr>
+
+<tr>
+<td><input id="tool2_nama"></td>
+<td><input id="tool2_fungsi"></td>
+<td><input id="tool2_penggunaan"></td>
+</tr>
+
+<tr>
+<td><input id="tool3_nama"></td>
+<td><input id="tool3_fungsi"></td>
+<td><input id="tool3_penggunaan"></td>
+</tr>
+
+<tr>
+<td><input id="tool4_nama"></td>
+<td><input id="tool4_fungsi"></td>
+<td><input id="tool4_penggunaan"></td>
+</tr>
+
 </table>
 </div>
 
@@ -191,13 +200,13 @@ textarea, input {
 <h3>🎯 B. Aktivitas 2 – Penyelesaian Karya</h3>
 
 <p>Jenis Desain:</p>
-<input>
+<input id="jenis_desain">
 
 <p>Tujuan:</p>
-<input>
+<input id="tujuan">
 
 <p>Target Pengguna:</p>
-<input>
+<input id="target">
 </div>
 
 <!-- D -->
@@ -215,53 +224,50 @@ Upload Hasil Desain
 <div class="section">
 <h3>💬 E. Presentasi & Refleksi</h3>
 
-<textarea placeholder="Konsep desain"></textarea>
-<textarea placeholder="Tools utama"></textarea>
-<textarea placeholder="Kelebihan desain"></textarea>
-<textarea placeholder="Masukan"></textarea>
+<textarea id="refleksi_konsep" placeholder="Konsep desain"></textarea>
+<textarea id="refleksi_tools" placeholder="Tools utama"></textarea>
+<textarea id="refleksi_kelebihan" placeholder="Kelebihan desain"></textarea>
+<textarea id="refleksi_masukan" placeholder="Masukan"></textarea>
 </div>
 
-<!-- TOMBOL BAWAH -->
+<!-- TOMBOL -->
 <div class="action-buttons">
- <button onclick="simpanData()">💾 Simpan Jawaban</button>
+<button class="save-btn" onclick="simpanData()">💾 Simpan Jawaban</button>
+<a href="index.html" class="back-bottom">⬅ Kembali</a>
+</div>
 
 <script>
 function simpanData() {
 
-  const idInput = document.getElementById("id_siswa");
+  const id = document.getElementById("id_siswa").value;
 
-  if(!idInput || idInput.value === ""){
-    alert("⚠️ Isi ID siswa terlebih dahulu");
+  if(id === ""){
+    alert("⚠️ Isi ID/Nama terlebih dahulu");
     return;
   }
 
-  const inputs = document.querySelectorAll("textarea, input");
-  let jawaban = [];
+  let jawaban = {};
 
-  inputs.forEach(el => {
-    if(el.id !== "id_siswa"){
-      jawaban.push(el.value);
+  document.querySelectorAll("textarea, input").forEach(el => {
+    if(el.id && el.id !== "id_siswa"){
+      jawaban[el.id] = el.value;
     }
   });
 
-  fetch("https://script.google.com/macros/s/AKfycbxzSSSMttKWdeab7kUMjai_z4Bj9xG4I2M9FkbCvirg38rU30d6ZpCmYGay9mDAg0HC/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbyOH2CYJmGS_2phOaaM48yept3J4E81T_0gOSvxgwHIlJUO3HhYkY6Q-Ektvs0gE0J9qA/exec", {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
     body: JSON.stringify({
-      id: idInput.value,
-      pertemuan: "Pertemuan 1",
-      jawaban: jawaban.join(" | ")
+      id: id,
+      pertemuan: "Pertemuan 3",
+      jawaban: jawaban
     })
   })
-  .then(res => res.text()) // 🔥 penting
-  .then(data => {
-    alert("✅ Jawaban berhasil disimpan ke Google Sheets");
+  .then(res => res.text())
+  .then(() => {
+    alert("✅ Jawaban berhasil disimpan");
   })
-  .catch(err => {
+  .catch(() => {
     alert("❌ Gagal menyimpan");
-    console.error(err);
   });
 
 }
